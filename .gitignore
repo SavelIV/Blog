@@ -1,0 +1,7 @@
+puphpet/config-custom.yaml
+puphpet/
+nbproject/
+.vagrant/
+config/db_params_main.php
+Vagrantfile
+.gitattributes
