@@ -83,8 +83,6 @@
                             <div id="contact_form">
                                 <?php if ($result): ?>
                                     <span style='color:blue; font-size: 35px; line-height: 40px; margin: 10px;'>Your Message was sent successfully !</span>
-                                <?php else: ?>
-                                    <span style='color:red; font-size: 35px; line-height: 40px; margin: 10px;'>Error! Please try again.</span>
                                 <?php endif; ?>
                                 <form name="form1" id="ff" method="post">
                                     <div class="row">

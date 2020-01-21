@@ -110,8 +110,6 @@
                                         <div id="comment">
                                             <?php if ($result): ?>
                                                 <span style='color:blue; font-size: 25px; line-height: 20px;'>Your Message was sent successfully !</span>
-                                            <?php else: ?>
-                                                <span style='color:red; font-size: 25px; line-height: 20px;'>Error! Please try again.</span>
                                             <?php endif; ?>
                                             <h3>Leave a Reply</h3>
                                             <span>Your email address will not be published. Required fields are marked </span>
