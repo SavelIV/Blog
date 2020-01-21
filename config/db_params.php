@@ -1,8 +1,8 @@
 <?php
 
 return array(
-    'host' => "",
-    'dbname' => "",
-    'user' => "",
-    'password' => "",
+    'host' => "localhost",
+    'dbname' => "phpbase",
+    'user' => "remoteadmin",
+    'password' => "111111",
 );
