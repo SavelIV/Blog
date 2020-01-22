@@ -2,10 +2,10 @@
 
 class News 
 {
-    /*
-     * Возвращает одну новость по указателю $id:
+    /**
+     * return one news by $id:
+     * @param int $id news id
      */
-
     public static function getNewsItemByID($id) 
     {
         $id = intval($id);
@@ -15,20 +15,23 @@ class News
             $db = Db::getConnection();
             $result = $db->query('SELECT * FROM news WHERE id=' . $id);
 
-            /* $result->setFetchMode(PDO::FETCH_NUM); */
             $result->setFetchMode(PDO::FETCH_ASSOC);
 
             $newsItem = $result->fetch();
 
-            // Если запрос выполенен успешно, возвращаем id новости
+            // if request successful returns news id
             if ($newsItem) {
                 return $newsItem;
             }
-            // Иначе возвращаем 0
+            // otherwise return 0
             return 0;
         }
     }
 
+     /**
+     * Return array of news by category:
+     * @param string $type news category
+     */
     public static function getNewsByCategory($type) 
     {
        
@@ -52,11 +55,9 @@ class News
                 $i++;
                 
             }
-            // Если запрос выполенен успешно, возвращаем категорию новости
             if ($newsType) {
                 return $newsType;
             }
-            // Иначе возвращаем 0
             return 0;
         }
     }
@@ -87,6 +88,9 @@ class News
         return $newsList;
     }
     
+    /**
+     * Returns news categories
+     */
     public static function getNewsCategories() {
 
         $newsCategories = array();

@@ -10,5 +10,6 @@ return array(
         'gallery' => 'articles/gallery', //actionGallery in ArticlesController
         'about' => 'articles/about', //actionAbout in ArticlesController
         'contact' => 'articles/contact', //actionContact in ArticlesController
+        '.+' => 'articles/list', //actionList in ArticlesController
 	'' => 'articles/list', //actionList in ArticlesController
     );

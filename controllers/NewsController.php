@@ -1,7 +1,14 @@
 <?php
 
+/**
+ * Class NewsController
+ * Class for news manage
+ */
 class NewsController {
 
+    /**
+     * Action for "news" site page 
+     */
     public function actionList() {
         $newsCategories = News::getNewsCategories();
         $newsList = News::getNewsList();
@@ -14,6 +21,10 @@ class NewsController {
         return true;
     }
 
+    /**
+     * Action for "news/view" site page 
+     * @param int $id news id
+     */
     public function actionView($id) {
         if ($id) {
             $newsCategories = News::getNewsCategories();
@@ -23,6 +34,7 @@ class NewsController {
             $recentArticles = Articles::getRecentArticles();
             $newsItem = News::getNewsItemByID($id);
             if ($newsItem == 0) {
+                //error page
                 Router::Error();
             }
             
@@ -32,6 +44,10 @@ class NewsController {
         return true;
     }
 
+    /**
+     * Action for "news/category" site page 
+     * @param string $type news type
+     */
     public function actionCategory($type) {
         if ($type) {
             $newsCategories = News::getNewsCategories();
@@ -41,6 +57,7 @@ class NewsController {
             $recentArticles = Articles::getRecentArticles();
             $newsType = News::getNewsByCategory($type);
             if ($newsType == 0) {
+                //error page
                 Router::Error();
             }
 

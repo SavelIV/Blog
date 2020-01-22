@@ -7,7 +7,7 @@
                 <div class="wrap-col">
                     <h3 class="widget-title">About Us</h3>
                     <p>THIS IS SIMPLE RETRO GALLERY: BEAUTY PHOTOS AND FAMOUS POEMS.</p>
-                    <p>This site was made with love (love to travels, love to poems, love to all the world.</p>
+                    <p>This site was made with love (love to travels, love to poems, love to all the world).</p>
                 </div>
             </div>
             <div class="col-1-4 col-footer-2">

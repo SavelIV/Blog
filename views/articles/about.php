@@ -97,7 +97,7 @@
                                                 </p>
                                             </div>
                                             <blockquote><p>All code is well documented (and self-documented :)). Code you may find here: https://github.com/SavelIV/Blog </p></blockquote>
-                                            <p>Site uses MySql database for storing articles and poems(using PDO with prepared statements).
+                                            <p>MySql database for storing articles, poems and photos (using PDO with prepared statements) is using here.
                                             </p>
                                             <p>Mail is working, you may leave a comment. If you know some great poems and you would like to share, 
                                                paste it below, please. I add it to this site with my pleasure. Thanks.

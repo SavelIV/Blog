@@ -29,11 +29,9 @@ class Router {
      * Method to handle requests
      */
     public function run() {
-   
+        // get request string
         $uri = $this->getURI();
-        //for russian url
-        $uri = rawurldecode($uri);
-
+       
         // check if it exists in routes.php
         foreach ($this->routes as $uriPattern => $path) {
             

@@ -1,7 +1,14 @@
 <?php
 
+/**
+ * Class ArticlesController
+ * Class for articles manage
+ */
 class ArticlesController {
 
+    /**
+     * Action for "index" site page 
+     */
     public function actionList() {
         $newsCategories = News::getNewsCategories();
         $articlesCategories = Articles::getArticlesCategories();
@@ -14,6 +21,10 @@ class ArticlesController {
         return true;
     }
 
+    /**
+     * Action for "articles/view" site page 
+     * @param int $id article id
+     */
     public function actionView($id) {
 
         if ($id) {
@@ -24,6 +35,7 @@ class ArticlesController {
             $newsList = News::getNewsList();
             $articleId = Articles::getArticleByID($id);
             if ($articleId == 0) {
+                //error page
                 Router::Error();
             }
 
@@ -35,6 +47,9 @@ class ArticlesController {
         return true;
     }
 
+    /**
+     * Action for "gallery" site page 
+     */
     public function actionGallery() {
         $newsCategories = News::getNewsCategories();
         $articlesCategories = Articles::getArticlesCategories();
@@ -47,6 +62,10 @@ class ArticlesController {
         return true;
     }
 
+    /**
+     * Action for "articles/category" site page 
+     * @param string $type articles type
+     */
     public function actionCategory($type) {
 
         if ($type) {
@@ -57,6 +76,7 @@ class ArticlesController {
             $articlesList = Articles::getArticlesList();
              $articlesType = Articles::getArticlesByCategory($type);
             if ($articlesType == 0) {
+                //error page
                 Router::Error();
             }
 
@@ -66,6 +86,9 @@ class ArticlesController {
         return true;
     }
     
+    /**
+     * Action for "about" site page 
+     */
     public function actionAbout() {
         
         $name = $email = $message = $result = false;
@@ -75,6 +98,7 @@ class ArticlesController {
             $email = $_POST['email'];
             $message = $_POST['message'];
 
+            // send email to admin
             $to = "saviv@saviv.site";
             $subject = "M & M - comment from site:";
             $message = " Name: " . $name . "\r\n Email: " . $email . "\r\n Message:\r\n" . $message;
@@ -96,6 +120,9 @@ class ArticlesController {
         return true;
     }
     
+    /**
+     * Action for "contact" site page 
+     */
     public function actionContact() {
 
         $name = $email = $message = $subject = $result = false;
@@ -106,6 +133,7 @@ class ArticlesController {
             $message = $_POST['message'];
             $subject = $_POST['subject'];
 
+            // send email to admin
             $to = "saviv@saviv.site";
             $subject = "M & M - mail from site:" . $subject;
             $message = " Name: " . $name . "\r\n Email: " . $email . "\r\n Message:\r\n" . $message;

@@ -1,10 +1,11 @@
 <?php
 
 class Articles {
-    /*
-     * Возвращает одну статью по указателю $id:
+    
+    /**
+     * return one article by $id:
+     * @param int $id article id
      */
-
     public static function getArticleByID($id) {
         $id = intval($id);
 
@@ -14,17 +15,17 @@ class Articles {
 
             $result->setFetchMode(PDO::FETCH_ASSOC);
             $articleId = $result->fetch();
-            // Если запрос выполенен успешно, возвращаем id статьи
+            // if request successful returns article id
             if ($articleId) {
                 return $articleId;
             }
-            // Иначе возвращаем 0
+            // otherwise return 0
             return 0;
         }
     }
 
     /**
-     * Возвращает массив статей ArticlesList:
+     * Returns array of articles
      */
     public static function getArticlesList() {
 
@@ -48,9 +49,12 @@ class Articles {
         return $articlesList;
     }
 
-    // Количество последних статей в футере
+    // recent articles in footer
     const RECENT = 6;
 
+    /**
+     * Returns recent articles
+     */
     public static function getRecentArticles($count = self::RECENT) {
 
 
@@ -73,6 +77,10 @@ class Articles {
         return $recentArticles;
     }
 
+    /**
+     * return array of article by category:
+     * @param string $type articles category
+     */
     public static function getArticlesByCategory($type) {
 
         $type = trim($type);
@@ -93,15 +101,16 @@ class Articles {
                 $articlesType[$i]['type'] = $row['type'];
                 $i++;
             }
-            // Если запрос выполенен успешно, возвращаем тип статьи
             if ($articlesType) {
                 return $articlesType;
             }
-            // Иначе возвращаем 0
             return 0;
         }
     }
 
+    /**
+     * Returns articles categories
+     */
     public static function getArticlesCategories() {
 
         $articlesCategories = array();
